@@ -4,22 +4,22 @@
 
 *{
     box-sizing:border-box;
-    font-size:16px;
     margin:0;
     padding:0;
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
 
-
-/* =========================================
-   BODY
-========================================= */
+html{
+    font-size:16px;
+}
 
 body{
 
     background:#f5f5f5;
     color:#222;
     line-height:1.5;
+
+    overflow-x:hidden; /* evita desbordes */
 
 }
 
@@ -32,14 +32,24 @@ header{
 
     background:#111;
     color:white;
-    padding:22px;
-    height:100px;
+
+    padding:20px;
+    min-height:90px;
+
     text-align:center;
 
     font-size:22px;
     font-weight:600;
 
     letter-spacing:1px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    max-width:100%;
 
 }
 
@@ -55,11 +65,12 @@ header{
 
     padding:30px 20px;
 
+    width:100%;
 }
 
 
 /* =========================================
-   PANEL (tarjetas tipo dashboard)
+   PANEL
 ========================================= */
 
 .panel{
@@ -75,6 +86,9 @@ header{
     box-shadow:0 4px 10px rgba(0,0,0,0.08);
 
     border:1px solid #e4e4e4;
+
+    width:100%;
+    max-width:100%;
 
 }
 
@@ -124,7 +138,7 @@ label{
 
 
 /* =========================================
-   INPUTS Y SELECT
+   INPUTS
 ========================================= */
 
 select,
@@ -148,8 +162,6 @@ input{
 
 }
 
-
-/* efecto focus */
 
 select:focus,
 input:focus{
@@ -193,26 +205,6 @@ button{
 
 }
 
-
-.logout-btn{
-
-    float:right;
-    background:#636060;
-    color:white;
-    border:none;
-    padding:8px 14px;
-    cursor:pointer;
-    border-radius:4px;
-    height:45px;
-    width:auto;
-    position:relative;
-    bottom:20px;
-
-}
-
-
-/* hover */
-
 button:hover{
 
     background:#555;
@@ -221,7 +213,34 @@ button:hover{
 
 
 /* =========================================
-   RESULTADO DE COTIZACION
+   LOGOUT
+========================================= */
+
+.logout-btn{
+
+    position:absolute;
+
+    right:20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background:#636060;
+
+    padding:8px 14px;
+
+    border-radius:4px;
+
+    height:40px;
+
+    width:auto;
+
+}
+
+
+/* =========================================
+   RESULTADO
 ========================================= */
 
 .resultado{
@@ -240,22 +259,55 @@ button:hover{
 
     border:1px solid #ddd;
 
+    text-align:center;
+
 }
 
 
 /* =========================================
-   TABLAS (panel admin)
+   WRAPPER SCROLL TABLAS
+========================================= */
+
+.tabla-scroll{
+
+    width:100%;
+
+    overflow-x:auto;
+
+    overflow-y:auto;
+
+    margin-top:20px;
+
+}
+
+
+/* scrollbar suave */
+
+.tabla-scroll::-webkit-scrollbar{
+
+    height:6px;
+
+}
+
+.tabla-scroll::-webkit-scrollbar-thumb{
+
+    background:#bbb;
+    border-radius:10px;
+
+}
+
+
+/* =========================================
+   TABLAS
 ========================================= */
 
 .tabla{
 
-    width:100%;
-
-    margin-top:20px;
-
     border-collapse:collapse;
 
     font-size:14px;
+
+    min-width:700px; /* fuerza scroll si la pantalla es chica */
 
 }
 
@@ -266,9 +318,11 @@ button:hover{
 
     color:white;
 
-    padding:12px;
+    padding:10px;
 
     text-align:center;
+
+    white-space:nowrap;
 
 }
 
@@ -280,6 +334,8 @@ button:hover{
     padding:10px;
 
     text-align:center;
+
+    white-space:nowrap;
 
 }
 
@@ -309,13 +365,10 @@ footer{
 
 
 /* ====================================================
-   MOBILE UX (APP STYLE)
-   mejora completa sin romper desktop
+   MOBILE (APP STYLE)
 ==================================================== */
 
 @media (max-width:768px){
-
-/* BODY */
 
 body{
 
@@ -323,44 +376,32 @@ body{
 
 }
 
-
-/* HEADER tipo app */
+/* HEADER */
 
 header{
 
-    height:auto;
+    flex-direction:column;
 
-    padding:16px;
+    gap:10px;
+
+    padding:18px;
 
     font-size:18px;
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
 }
-
-
-/* botón logout estilo app */
 
 .logout-btn{
 
     position:static;
 
-    margin-top:10px;
+    transform:none;
 
     width:100%;
-
-    height:42px;
 
 }
 
 
-/* contenedor ocupa toda pantalla */
+/* CONTENEDOR */
 
 .container{
 
@@ -369,7 +410,7 @@ header{
 }
 
 
-/* panel tipo tarjeta móvil */
+/* PANEL */
 
 .panel{
 
@@ -379,21 +420,10 @@ header{
 
     border-radius:14px;
 
-    box-shadow:0 3px 12px rgba(0,0,0,0.1);
-
 }
 
 
-/* títulos */
-
-h2{
-
-    font-size:20px;
-
-}
-
-
-/* inputs más grandes para touch */
+/* INPUTS */
 
 select,
 input{
@@ -405,7 +435,7 @@ input{
 }
 
 
-/* botones estilo app */
+/* BOTONES */
 
 button{
 
@@ -418,43 +448,11 @@ button{
 }
 
 
-/* resultado más visible */
+/* RESULTADO */
 
 .resultado{
 
     font-size:20px;
-
-    text-align:center;
-
-}
-
-
-/* tablas scrollables */
-
-.tabla{
-
-    display:block;
-
-    overflow-x:auto;
-
-    white-space:nowrap;
-
-}
-
-
-/* scroll suave */
-
-.tabla::-webkit-scrollbar{
-
-    height:6px;
-
-}
-
-.tabla::-webkit-scrollbar-thumb{
-
-    background:#bbb;
-
-    border-radius:10px;
 
 }
 
@@ -462,7 +460,7 @@ button{
 
 
 /* ====================================================
-   MOBILE EXTRA (CELULARES CHICOS)
+   MOBILE PEQUEÑO
 ==================================================== */
 
 @media (max-width:480px){
