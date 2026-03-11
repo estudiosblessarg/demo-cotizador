@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Panel Admin</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+<script src="js/database.js"></script>
+<script src="js/admin.js"></script>
+
+</head>
+
+<body onload="iniciarDB()">
+
+<header>
+
+<h1>Panel Administrador</h1>
+
+<button class="logout-btn" onclick="logout()">
+Cerrar sesión
+</button>
+
+</header>
+
+<div class="container">
+
+<!-- ============================= -->
+<!-- TABLA DE COTIZACIONES -->
+<!-- ============================= -->
+
+<div class="panel">
+
+<h2>Cotizaciones realizadas</h2>
+
+<table class="tabla">
+
+<thead>
+
+<tr>
+
+<th>Marca</th>
+<th>Modelo</th>
+<th>Versión</th>
+<th>Año</th>
+<th>KMs</th>
+<th>Estado</th>
+<th>Precio</th>
+<th>Fecha</th>
+<th>Usuario</th>
+<th>Acciones</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabla">
+
+<!-- Las cotizaciones se insertan con JS -->
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- PANEL DE EDICION -->
+<!-- ============================= -->
+
+<div class="panel">
+
+<h2>Editar Cotización</h2>
+
+<div id="editorCotizacion" style="display:none">
+
+<input type="hidden" id="editId">
+
+<div class="campo">
+
+<label for="editKm">Kilómetros</label>
+<input id="editKm" type="number">
+
+</div>
+
+<div class="campo">
+
+<label for="editDescuento">% Descuento</label>
+<input id="editDescuento" type="number">
+
+</div>
+
+<div class="botones-editor">
+
+<button onclick="guardarEdicion()">
+Guardar cambios
+</button>
+
+<button onclick="cancelarEdicion()">
+Cancelar
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<footer style="text-align:center;margin-top:40px;color:#888;font-size:14px;">
+
+Demo de sistema de cotización para concesionarias
+<p>Diseñado por Estudios Bless</p>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<!--
+====================================================
+PANEL DE COTIZACIÓN DE VEHÍCULOS
+====================================================
+-->
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Panel Cotizador | Sistema de Cotización</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+<!-- Scripts del sistema -->
+
+<script src="js/database.js"></script>
+<script src="js/datosVehiculos.js"></script>
+<script src="js/descuentos.js"></script>
+<script src="js/cotizador.js"></script>
+<script src="js/almacenamiento.js"></script>
+
+</head>
+
+
+<body onload="iniciarDB(); cargarVehiculos(); cargarDescuentos();">
+
+<!-- ===================================== -->
+<!-- HEADER DEL SISTEMA -->
+<!-- ===================================== -->
+
+<header>
+
+<h1>Sistema Profesional de Cotización de Vehículos</h1>
+
+<button class="logout-btn" onclick="logout()">
+Cerrar sesión
+</button>
+
+</header>
+
+
+<div class="container">
+
+<!-- ===================================== -->
+<!-- PANEL DE FORMULARIO -->
+<!-- ===================================== -->
+
+<div class="panel">
+
+<h2>Formulario de Cotización</h2>
+
+<p>
+Complete los datos del vehículo para calcular el valor estimado según kilometraje.
+</p>
+
+<hr>
+
+
+<!-- MARCA -->
+
+<label for="marca">
+Marca del vehículo <strong>*</strong>
+</label>
+
+<select id="marca" onchange="cargarModelos()">
+<option value="">Seleccione una marca</option>
+</select>
+
+
+
+<!-- MODELO -->
+
+<label for="modelo">
+Modelo <strong>*</strong>
+</label>
+
+<select id="modelo" onchange="cargarVersiones()">
+<option value="">Seleccione modelo</option>
+</select>
+
+
+
+<!-- VERSION -->
+
+<label for="version">
+Versión del vehículo <strong>*</strong>
+</label>
+
+<select id="version" onchange="cargarAnios()">
+<option value="">Seleccione versión</option>
+</select>
+
+
+
+<!-- AÑO -->
+
+<label for="anio">
+Año del vehículo <strong>*</strong>
+</label>
+
+<select id="anio">
+<option value="">Seleccione año</option>
+</select>
+
+
+
+<!-- KILOMETROS -->
+
+<label for="km">
+Kilometraje actual <strong>*</strong>
+</label>
+
+<input 
+type="number"
+id="km"
+placeholder="Ej: 85000"
+min="0"
+>
+
+
+
+<!-- ESTADO GENERAL -->
+
+<label for="estado">
+Estado general del vehículo (opcional)
+</label>
+
+<select id="estado">
+
+<option value="">Seleccione estado</option>
+<option value="Alto">Alto</option>
+<option value="Medio">Medio</option>
+<option value="Bajo">Bajo</option>
+
+</select>
+
+
+
+<br><br>
+
+<!-- BOTONES -->
+
+<button onclick="cotizar()">
+Calcular Cotización
+</button>
+
+<button onclick="location.reload()">
+Limpiar formulario
+</button>
+
+</div>
+
+
+
+<!-- ===================================== -->
+<!-- PANEL RESULTADO -->
+<!-- ===================================== -->
+
+<div class="panel">
+
+<h2>Resultado de la Cotización</h2>
+
+<p>
+El valor estimado del vehículo aparecerá aquí.
+</p>
+
+<div id="resultado" class="resultado">
+Esperando cálculo...
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================================== -->
+<!-- MIS COTIZACIONES -->
+<!-- ===================================== -->
+
+<div class="panel">
+
+<h2>Mis Cotizaciones</h2>
+
+<p>
+Aquí se muestran únicamente las cotizaciones realizadas por tu usuario.
+</p>
+
+<table class="tabla">
+
+<thead>
+
+<tr>
+
+<th>Marca</th>
+<th>Modelo</th>
+<th>Versión</th>
+<th>Año</th>
+<th>KMs</th>
+<th>Precio</th>
+<th>Fecha</th>
+<th>Acciones</th>
+
+</tr>
+
+</thead>
+
+<tbody id="misCotizaciones">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<!-- ===================================== -->
+<!-- FOOTER -->
+<!-- ===================================== -->
+
+<footer style="text-align:center;margin-top:40px;color:#888;font-size:14px;">
+
+Demo de sistema de cotización para concesionarias
+<p>Diseñado por Estudios Bless</p>
+
+</footer>
+
+</body>
+
+</html>

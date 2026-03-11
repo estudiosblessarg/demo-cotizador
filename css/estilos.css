@@ -1,0 +1,308 @@
+/* =========================================
+   RESET GENERAL
+========================================= */
+
+*{
+    box-sizing:border-box;
+    font-size: 16px;
+    margin:0;
+    padding:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+
+    background:#f5f5f5; /* fondo blanco gris claro */
+    color:#222;
+    line-height:1.5;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+
+    background:#111;
+    color:white;
+    padding:22px;
+    height: 100px;
+    text-align:center;
+
+    font-size:22px;
+    font-weight:600;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.container{
+
+    max-width:900px;
+    margin:auto;
+
+    padding:30px 20px;
+
+}
+
+
+/* =========================================
+   PANEL (tarjetas tipo dashboard)
+========================================= */
+
+.panel{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    margin-top:25px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+
+    border:1px solid #e4e4e4;
+
+}
+
+
+/* =========================================
+   TITULOS
+========================================= */
+
+h2{
+
+    margin-bottom:10px;
+    font-size:22px;
+
+}
+
+p{
+
+    color:#555;
+    margin-bottom:15px;
+
+}
+
+hr{
+
+    border:none;
+    border-top:1px solid #e3e3e3;
+    margin:20px 0;
+
+}
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+label{
+
+    display:block;
+
+    margin-top:14px;
+
+    font-weight:600;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================
+   INPUTS Y SELECT
+========================================= */
+
+select,
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:6px;
+
+    border-radius:6px;
+
+    border:1px solid #ccc;
+
+    font-size:14px;
+
+    background:white;
+
+    transition:all .2s ease;
+
+}
+
+
+/* efecto focus */
+
+select:focus,
+input:focus{
+
+    border-color:#777;
+
+    outline:none;
+
+    box-shadow:0 0 0 2px rgba(0,0,0,0.05);
+
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+button{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:black;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:background .25s ease;
+
+}
+
+.logout-btn{
+
+float:right;
+background:#636060;
+color:white;
+border:none;
+padding:8px 14px;
+cursor:pointer;
+border-radius:4px;
+height: 45px;
+width: auto;
+position: relative;
+bottom: 20px;
+
+}
+
+/* hover */
+
+button:hover{
+
+    background:#555;
+
+}
+
+
+/* =========================================
+   RESULTADO DE COTIZACION
+========================================= */
+
+.resultado{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    padding:15px;
+
+    border-radius:6px;
+
+    background:#f1f1f1;
+
+    border:1px solid #ddd;
+
+}
+
+
+/* =========================================
+   TABLAS (panel admin)
+========================================= */
+
+.tabla{
+
+    width:100%;
+
+    margin-top:20px;
+
+    border-collapse:collapse;
+
+    font-size:14px;
+
+}
+
+
+.tabla th{
+
+    background:#111;
+
+    color:white;
+
+    padding:12px;
+
+    text-align:center;
+
+}
+
+
+.tabla td{
+
+    border:1px solid #ddd;
+
+    padding:10px;
+
+    text-align:center;
+
+}
+
+
+.tabla tr:nth-child(even){
+
+    background:#f7f7f7;
+
+}
+
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    color:#777;
+
+    font-size:13px;
+
+}
